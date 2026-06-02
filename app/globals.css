@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-bg: #131313;
+  --color-surface: #1c1b1b;
+  --color-surface-high: #2a2a2a;
+  --color-border-strong: #4e453b;
+  --color-border-subtle: #201f1f;
+  --color-primary: #e5e2e1;
+  --color-secondary: #d1c5b7;
+  --color-muted: #9a8f83;
+  --color-accent: #e5c497;
+  --color-accent-dim: #c8a97e;
+
+  /* Typography */
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-mono: var(--font-mono), "Courier New", monospace;
+
+  /* Global Structural Overrides */
+  --radius: 0px;
+  --max-width-container: 1280px;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-radius: 0 !important;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #e5c49733;
+    color: var(--color-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* ─── Container ─────────────────────────────── */
+  .container-main {
+    max-width: var(--max-width-container);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .container-main {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  /* ─── Section padding ───────────────────────── */
+  .section-padding {
+    padding-top: clamp(5rem, 10vw, 10rem);
+    padding-bottom: clamp(5rem, 10vw, 10rem);
+  }
+
+  /* ─── Underline draw-in ─────────────────────── */
+  .link-draw {
+    position: relative;
+    display: inline-block;
+  }
+
+  .link-draw::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 220ms ease;
+  }
+
+  .link-draw:hover::after {
+    width: 100%;
+  }
+
+  /* ─── Pulsing availability dot ──────────────── */
+  .pulse-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: #22c55e;
+    border-radius: 50% !important;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .pulse-dot::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50% !important;
+    background-color: #22c55e;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+    75%,
+    100% {
+      transform: scale(2.2);
+      opacity: 0;
+    }
+  }
+
+  /* ─── Chip / tag ────────────────────────────── */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border: 1px solid var(--color-border-subtle);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-muted);
+    white-space: nowrap;
+    transition: border-color 150ms ease, color 150ms ease;
+  }
+
+  .chip-accent {
+    border-color: var(--color-border-strong);
+    color: var(--color-accent-dim);
+  }
+
+  /* ─── Project row base ──────────────────────── */
+  .project-row {
+    border-top: 1px solid var(--color-border-subtle);
+    padding: 1.25rem 0;
+    transition: background-color 150ms linear;
+    cursor: pointer;
+  }
+
+  .project-row:last-child {
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .project-row:hover {
+    background-color: var(--color-surface);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+
+  /* ─── Platform box ──────────────────────────── */
+  .platform-box {
+    border: 1px solid var(--color-border-subtle);
+    padding: 1.25rem;
+    transition: border-color 200ms ease;
+  }
+
+  .platform-box:hover {
+    border-color: var(--color-border-strong);
+  }
+}
+
+/* ─── Reduce motion ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .pulse-dot::before {
+    animation: none;
+  }
+}
