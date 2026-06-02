@@ -1,6 +1,6 @@
 # Clinton - Portfolio
 
-Personal portfolio for Clinton Owoseni Phillips - Full-Stack & React Native Developer from Lagos, Nigeria.
+Personal portfolio for Clinton Owoseni Phillips - Full-Stack & React Native Developer from Nigeria.
 
 **Live:** [iamclinton.vercel.app](https://iamclinton.vercel.app)
 
@@ -183,18 +183,18 @@ Every push to `main` triggers a redeploy automatically.
 
 The visual language is based on the **Atelier Digital** system - dark editorial aesthetic with a noir-gold accent.
 
-| Token | CSS Custom Property | Value | Description |
-|---|---|---|---|
-| Background | `--color-bg` | `#131313` | Main site background |
-| Surface | `--color-surface` | `#1c1b1b` | Cards and section rows background |
-| Surface High | `--color-surface-high` | `#2a2a2a` | Elevated components/tooltips |
-| Border Strong | `--color-border-strong` | `#4e453b` | Accent borders and separators |
-| Border Subtle | `--color-border-subtle` | `#201f1f` | Default borders |
-| Text primary | `--color-primary` | `#e5e2e1` | Main body/heading text |
-| Text secondary | `--color-secondary` | `#d1c5b7` | Secondary text |
-| Text muted | `--color-muted` | `#9a8f83` | Muted descriptions/labels |
-| Accent | `--color-accent` | `#e5c497` | Primary noir-gold accent |
-| Accent Dim | `--color-accent-dim` | `#c8a97e` | Muted/hover state for accent elements |
+| Token          | CSS Custom Property     | Value     | Description                           |
+| -------------- | ----------------------- | --------- | ------------------------------------- |
+| Background     | `--color-bg`            | `#131313` | Main site background                  |
+| Surface        | `--color-surface`       | `#1c1b1b` | Cards and section rows background     |
+| Surface High   | `--color-surface-high`  | `#2a2a2a` | Elevated components/tooltips          |
+| Border Strong  | `--color-border-strong` | `#4e453b` | Accent borders and separators         |
+| Border Subtle  | `--color-border-subtle` | `#201f1f` | Default borders                       |
+| Text primary   | `--color-primary`       | `#e5e2e1` | Main body/heading text                |
+| Text secondary | `--color-secondary`     | `#d1c5b7` | Secondary text                        |
+| Text muted     | `--color-muted`         | `#9a8f83` | Muted descriptions/labels             |
+| Accent         | `--color-accent`        | `#e5c497` | Primary noir-gold accent              |
+| Accent Dim     | `--color-accent-dim`    | `#c8a97e` | Muted/hover state for accent elements |
 
 All design tokens are defined under the `@theme` directive in `app/globals.css` and compiled as utility classes by Tailwind CSS v4. No `tailwind.config.ts` config file is used in this project. Never hardcode hex values in components - use the Tailwind utility classes (e.g. `bg-bg`, `text-primary`, `border-border-subtle`).
 

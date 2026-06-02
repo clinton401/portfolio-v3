@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "React Native",
     "Next.js",
     "TypeScript",
-    "Lagos Nigeria",
+    "Nigeria",
     "Software Engineer",
     "SaaS",
     "Resumify",

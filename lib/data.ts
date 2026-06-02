@@ -23,7 +23,7 @@ export const personal = {
     name: "Clinton Owoseni",
     // Status options: "Available for Work" | "Open to Opportunities" | "Accepting Clients"
     status: "Available for Work",
-    location: "Lagos, Nigeria",
+    location: " Nigeria",
     experience: `${calculatedYears}+ Years`,
     focus: "Full-Stack Developer",
     email: "clintonphillips464@gmail.com",
@@ -66,7 +66,7 @@ export const about = {
 export const seo = {
     title: "Clinton Owoseni - Full-Stack & Mobile Developer",
     description:
-        `Full-Stack & Mobile Developer based in Lagos, Nigeria. I build production-grade SaaS products, backend infrastructure, and native mobile applications with ${calculatedYears}+ years of experience.`,
+        `Full-Stack & Mobile Developer based in  Nigeria. I build production-grade SaaS products, backend infrastructure, and native mobile applications with ${calculatedYears}+ years of experience.`,
     url: "https://iamclinton.vercel.app",
     twitterHandle: "@phillips464",
 } as const;
