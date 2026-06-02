@@ -57,7 +57,7 @@ export function Hero() {
             variants={heroLine}
             className="font-mono text-[13px] tracking-[0.06em] text-muted mb-6"
           >
-            {personal.focus} · {personal.location}
+            {personal.focus} · Remote Worldwide
           </motion.p>
 
           {/* Bio */}

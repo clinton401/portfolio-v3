@@ -1,6 +1,6 @@
 # Clinton - Portfolio
 
-Personal portfolio for Clinton Owoseni Phillips - Full-Stack & React Native Developer from Nigeria.
+Personal portfolio for Clinton Owoseni Phillips - Full-Stack & React Native Developer.
 
 **Live:** [iamclinton.vercel.app](https://iamclinton.vercel.app)
 

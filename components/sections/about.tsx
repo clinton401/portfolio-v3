@@ -7,7 +7,6 @@ import { personal, about } from "@/lib/data";
 
 export function About() {
   const quickFacts = [
-    { label: "Location", value: personal.location },
     { label: "Experience", value: personal.experience },
     { label: "Platforms", value: personal.focus },
     { label: "Status", value: personal.status },
