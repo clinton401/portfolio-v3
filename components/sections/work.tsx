@@ -318,7 +318,11 @@ function MobileCard({ project }: { project: Project }) {
 function MultiPlatformCard({ project }: { project: Project }) {
   return (
     <article className="overflow-hidden">
-      <VideoDemoPlayer demoUrl={project.videoDemo} />
+      {project.videoDemo ? (
+        <VideoDemoPlayer demoUrl={project.videoDemo} />
+      ) : (
+        <DarkPlaceholder index={project.id} />
+      )}
 
       <div className="pt-5 pb-2">
         <div className="flex items-center gap-3 mb-2">
@@ -328,7 +332,7 @@ function MultiPlatformCard({ project }: { project: Project }) {
               {project.badge}
             </span>
           )}
-          <span className="chip text-[10px]">Web + Mobile</span>
+          <span className="chip text-[10px]">Multi-Platform</span>
         </div>
 
         <h3 className="font-serif font-medium text-xl text-primary leading-tight mb-2">
@@ -348,8 +352,7 @@ function MultiPlatformCard({ project }: { project: Project }) {
                     isMobile ? "text-accent opacity-70" : "text-muted"
                   }`}
                 >
-                  -{" "}
-                  {isMobile ? "Native Mobile (Android · iOS)" : "Web Platform"}
+                  - {platform.label}
                 </p>
 
                 <p className="font-sans font-light text-secondary text-[13px] leading-relaxed mb-4">
@@ -419,7 +422,7 @@ export function Work() {
     name: string;
   } | null>(null);
 
-  const featured = projects.filter((p) => p.featured);
+  const featured = projects.filter((p) => p.featured && !p.isHidden);
 
   const toggle = (id: string) =>
     setExpanded((prev) => (prev === id ? null : id));
@@ -483,7 +486,7 @@ export function Work() {
                           </span>
                         )}
                         {project.isMultiPlatform && (
-                          <span className="chip text-[10px]">Web + Mobile</span>
+                          <span className="chip text-[10px]">Multi-Platform</span>
                         )}
                       </div>
                       <p className="font-sans font-light text-muted text-[13px] mt-0.5 truncate">
@@ -535,9 +538,7 @@ export function Work() {
                                 className="platform-box"
                               >
                                 <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted mb-3">
-                                  {platform.label === "Web Platform"
-                                    ? "- Web Platform"
-                                    : "- Mobile App"}
+                                  - {platform.label}
                                 </p>
                                 <p className="font-sans font-light text-secondary text-[13px] leading-relaxed mb-4">
                                   {platform.description}

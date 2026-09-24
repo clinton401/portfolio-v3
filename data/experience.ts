@@ -8,21 +8,21 @@ export type Experience = {
 };
 
 export const experience: Experience[] = [
-  {
-    company: "Independent",
-    role: "Freelance Full-Stack Developer",
-    period: "2025 - Present",
-    location: "Remote",
-    stack: ["Next.js", "React Native", "Node.js", "PostgreSQL", "TypeScript"],
-    highlights: [
-      "Delivered full-stack web and mobile applications for clients across multiple industries, owning architecture, development, and production deployment end to end.",
-      "Managed full project lifecycle independently - scoping, client communication, technical decisions, and delivery.",
-    ],
-  },
+  // {
+  //   company: "Independent",
+  //   role: "Freelance Full-Stack Developer",
+  //   period: "2025 - Present",
+  //   location: "Remote",
+  //   stack: ["Next.js", "React Native", "Node.js", "PostgreSQL", "TypeScript"],
+  //   highlights: [
+  //     "Delivered full-stack web and mobile applications for clients across multiple industries, owning architecture, development, and production deployment end to end.",
+  //     "Managed full project lifecycle independently - scoping, client communication, technical decisions, and delivery.",
+  //   ],
+  // },
   {
     company: "Nobox Labs",
     role: "Full Stack Developer",
-    period: "2024 - 2025",
+    period: "2024 - Present",
     location: "Remote",
     stack: ["Next.js", "Node.js", "PostgreSQL", "React Native"],
     highlights: [

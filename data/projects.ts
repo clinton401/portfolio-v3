@@ -17,6 +17,7 @@ export type Project = {
   url?: string;
   github?: string;
   featured: boolean;
+  isHidden?: boolean;
   isMultiPlatform?: boolean;
   platforms?: ProjectPlatform[];
   videoDemo?: string | null; // set to video URL when ready
@@ -25,7 +26,45 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "01",
+    id: "01", // Change this ID based on where you place it in the array
+    name: "AIGenius",
+    shortDesc:
+      "Multi-model AI workspace - switch between GPT-4o, Claude, and Gemini in one place.",
+    description:
+      "A pay-as-you-go AI platform designed as a multi-platform ecosystem. Built with a shared NestJS and PostgreSQL backend serving both a Next.js web application and a native Electron desktop client. Features a unified chat interface, mid-conversation model switching, and robust desktop-to-cloud state coordination.",
+    tags: ["Next.js", "Electron", "NestJS", "PostgreSQL", "Redis", "TypeScript"],
+    url: "https://aigenius.noboxlabs.xyz",
+    featured: true,
+    badge: "AI Platform",
+    isMultiPlatform: true,
+    platforms: [
+      {
+        label: "Web Platform",
+        description:
+          "High-performance web app featuring a highly interactive chat interface, streaming SSE responses, and a pay-as-you-go credit system.",
+        stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+        url: "https://aigenius.noboxlabs.xyz",
+        isPrivate: true,
+      },
+      {
+        label: "Desktop App",
+        description:
+          "Native Electron app for macOS, Windows, and Linux. Features deep OS integration, secure IPC bridging, local file system access, and background tool execution.",
+        stack: ["Electron", "React", "TypeScript", "Node.js"],
+        url: "https://aigenius.noboxlabs.xyz",
+        isPrivate: true,
+      },
+      {
+        label: "Backend Core",
+        description:
+          "Scalable cloud architecture handling OAuth, Redis-backed state coordination, and unified AI model routing (OpenAI, Anthropic, Google).",
+        stack: ["NestJS", "PostgreSQL", "Drizzle ORM", "Redis"],
+        isPrivate: true,
+      }
+    ],
+  },
+  {
+    id: "02",
     name: "Resumify",
     shortDesc:
       "AI career toolkit - production web platform & native mobile app.",
@@ -57,7 +96,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "02",
+    id: "03",
     name: "GatewayOS",
     shortDesc:
       "Programmable API gateway with Redis rate-limiting and a Next.js control plane.",
@@ -71,7 +110,7 @@ export const projects: Project[] = [
   },
 
   {
-    id: "03",
+    id: "04",
     name: "StudyAI",
     shortDesc:
       "AI learning platform - upload a PDF, get summaries, MCQs, and writing help.",
@@ -83,7 +122,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "04",
+    id: "05",
     name: "Briza",
     shortDesc:
       "Full-stack social platform with real-time channels and threaded discussions.",
@@ -95,7 +134,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "05",
+    id: "06",
     name: "Cinematico",
     shortDesc:
       "Full-stack movie discovery app with trailers, ratings, and curated trending content.",
@@ -108,7 +147,7 @@ export const projects: Project[] = [
   },
   // ─── Add new projects below ───────────────────────────────────────────────
   // {
-  //   id: "05",
+  //   id: "07",
   //   name: "",
   //   shortDesc: "",
   //   description: "",
@@ -118,7 +157,7 @@ export const projects: Project[] = [
   //   featured: true,
   // },
   // {
-  //   id: "06",
+  //   id: "08",
   //   name: "",
   //   shortDesc: "",
   //   description: "",
