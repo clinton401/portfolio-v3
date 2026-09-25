@@ -17,7 +17,6 @@ export type Project = {
   url?: string;
   github?: string;
   featured: boolean;
-  isHidden?: boolean;
   isMultiPlatform?: boolean;
   platforms?: ProjectPlatform[];
   videoDemo?: string | null; // set to video URL when ready

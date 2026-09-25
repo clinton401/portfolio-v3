@@ -422,7 +422,7 @@ export function Work() {
     name: string;
   } | null>(null);
 
-  const featured = projects.filter((p) => p.featured && !p.isHidden);
+  const featured = projects.filter((p) => p.featured);
 
   const toggle = (id: string) =>
     setExpanded((prev) => (prev === id ? null : id));
